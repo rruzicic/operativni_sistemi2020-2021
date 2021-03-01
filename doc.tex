@@ -1,0 +1,112 @@
+%&pdflatex
+\documentclass{article}
+\usepackage[a4paper, total={200mm, 210mm}]{geometry}
+
+\begin{document}
+
+\textbf{Operativni sistemi(RA2020/2021) - odgovori iz knjige}
+\section{Uvod}
+\enumerate{}
+\item Koje poslove obavlja operativni sistem? \\
+-Operativni sistem je program koji objedinjuje u skladnu celinu raznorodne delove
+računara i sakriva od korisnika one detalje funkcionisanja ovih delova koji nisu bitni za
+korišćenje računara.
+\item Šta obuhvata pojam datoteke?\\
+-Pojam datoteke obuhvata sadržaj i atribute datoteke. Sadržaj datoteke predstavljaju
+korisnički podaci. U atribute datoteke spada, na primer, veličina datoteke ili vreme
+njenog nastanka.
+\item Šta se nalazi u deskriptoru datoteke?\\
+-Atributi datoteke, tj. vreme nastanka i veličina datoteke.
+\item Šta omogućuju datoteke?\\
+-Datoteke su namenjene za trajno čuvanje podataka. Pristup ovim podacima se svodi
+na čitanje i pisanje sadržaja datoteka.
+\item Šta obavezno prethodi čitanju i pisanju datoteke?\\
+-Prethodi njeno otvaranje, radi pripreme zahtevanog pristupa podacima(npr. prebacivanje
+deskriptora datoteke iz masovne memorije u radnu memoriju).
+\item Šta sledi iza čitanja i pisanja datoteke?\\
+-Iza čitanja i
+pisanja sadržaja datoteke obavezno sledi njeno zatvaranje (na primer, radi prebacivanja
+podataka i deskriptora datoteke iz radne memorije u masovnu memoriju)
+\item Šta obuhvata pojam procesa?\\
+-Pojam procesa obuhvata aktivnost, sliku i atribute procesa.
+\item Šta se nalazi u deskriptoru procesa?\\
+-Atributi procesa, u atribute procesa spadaju, na
+primer, stanje procesa i njegov prioritet.
+\item Koja stanja procesa postoje?\\
+-"aktivan", "čeka" i "spreman"
+\item Kada je proces aktivan?\\
+-Proces je aktivan kada procesor izvršava program.
+\item Šta je kvantum?\\
+-Ako postoji nekoliko procesa najvišeg (istog) prioriteta, tada je
+bitna ravnomerna raspodela procesorskog vremena izmedju njih. Ona se postiže ako aktivni proces prepušta procesor spremnom procesu istog (najvišeg) prioriteta čim
+istekne unapred odredjeni vremenski interval. Ovaj interval se naziva kvantum
+(quantum).
+\item Šta se dešava nakon isticanja kvantuma?\\
+-Prekida se sat, obrada ovakvih
+prekida sata izaziva prevodjenje aktivnog procesa u stanje "spreman" i preključivanje
+procesora na onaj od ostalih spremnih procesa najvišeg prioriteta koji je najduže u stanju
+"spreman".
+\item Po kom kriteriju se uvek bira aktivan proces?\\
+-Kriterijum za biranje aktivnog procesa predstavlja prioritet procesa.
+\item Koji prelazi su mogući izmedju stanja procesa?\\
+- Mogući prelazi: ČEKA $\rightarrow$ SPREMAN, SPREMAN $\rightarrow$ AKTIVAN,
+ AKTIVAN $\rightarrow$ SPREMAN, AKTIVAN $\rightarrow$ ČEKA
+\item Koji prelazi nisu mogući izmedju stanja procesa?\\
+- SPREMAN $\rightarrow$ ČEKA, ČEKA $\rightarrow$ AKTIVAN
+\item Šta omogućuju procesi?\\
+-Procesi omogućuju bolje iskorišćenje računara (procesora) i njegovu bržu reakciju na
+dešavanje vanjskih dogadjaja.
+\item Šta karakteriše sekvencijalni proces? \\
+-Proces je sekvencijalan ako je njegov trag
+odredjen u vreme programiranja, odnosno ako zavisi samo od obradjivanih podataka.
+\item Šta karakteriše konkurentni proces?\\
+-Procesi sa više istovremeno (concurrently) postojećih niti se nazivaju konkurentni
+procesi.
+\item Šta ima svaka nit konkurentnog procesa?\\
+-Svaka nit procesa ima svoj prioritet, svoje
+stanje, svoj stek, pa i svoj deskriptor.
+\item Koju operaciju uvodi modul za rukovanje procesorom?\\
+-Operaciju preključivanja.
+\item Po čemu se razlikuju preključivanja izmedju niti istog procesa i preključivanja
+izmedju niti raznih procesa?\\
+-Ključna razlika izmedju niti koje pripadaju istom procesu i niti
+koje pripadaju raznim procesima je da su prve niti u adresnom prostoru istog procesa (da
+bi mogle da saradjuju), dok su druge niti u adresnim prostorima raznih procesa.
+\item Koje operacije uvodi modul za rukovanje kontrolerima?\\
+-(drajverske) operacije ulaza i izlaza.
+\item Šta karakteriše drajvere?\\
+-Drajveri imaju zadatak da konkretan ulazno-izlazni uredjaj predstavi u
+apstraktnom obliku sa jednoobraznim i pravilnim načinom korišćenja.
+\item Koje operacije uvodi modul za rukovanje radnom memorijom?\\
+-operacije zauzimanja i oslobadjanja
+\item Koje operacije poziva modul za rukovanje radnom memorijom kada podržava
+virtuelnu memoriju?\\
+-operacije ulaza i izlaza(zbog prenosa podataka izmedju radne i masovne memorije).
+\item Koje operacije uvodi modul za rukovanje datotekama?\\
+-operacije otvaranja, zatvaranja, čitanja i pisanja
+\item Koje operacije poziva modul za rukovanje datotekama?\\
+-operacije ulaza i izlaza(operacije otvaranja, zatvaranja, čitanja i pisanja)
+\item Šta omogućuju multiprocesing i multithreading?\\
+-bolje iskorišćenje procesora, istovremena podrška većeg broja korisnika, 
+bržu reakciju računara na vanjske dogadjaje
+\item Koje operacije uvodi modul za rukovanje procesima?\\
+-operacije stvaranja i uništavanja
+\item Koje operacije poziva modul za rukovanje procesima?\\
+-operacije zauzimanja i oslobadjanja(i operacije stvaranja i uništavanja)
+\item Koje module sadrži slojeviti operativni sistem?\\
+- modul za rukovanje procesima, modul za rukovanje datotekama, modul za 
+rukovanje radnom memoriom, modul za rukovanje kontrolerima, modul za rukovanje procesorom
+\item Šta omogućuju sistemski pozivi?\\
+-sistemski pozivi omogućuju prelazak iz korisničkog prostora u sistemski prostor,
+radi poziva operacija operativnog sistema
+\item Koje adresne prostore podržava operativni sistem?\\
+-korisnički prostor (user space) i sistemski prostor (kernel space)
+\item Šta karakteriše interpreter komandnog jezika(shell)?\\
+-preuzimanje i interpretiranje komandi komandnog jezika
+\item Koji nivoi korišćenja operativnog sistema postoje?\\
+-programski i interaktivni
+\enumerate{}
+
+
+
+\end{document}
